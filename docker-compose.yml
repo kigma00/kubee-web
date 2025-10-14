@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  kubee-web:
+    build: .
+    ports:
+      - "3000:3000"
+      - "8282:8282"
+    environment:
+      - APP_HOST=0.0.0.0
+      - APP_PORT=8282
+      - APP_DEBUG=false
+      - JWT_SECRET_KEY=your-secret-key-change-in-production
+    volumes:
+      - ./backend/api/scan_results:/app/backend/api/scan_results
+      - ./backend/api/users.db:/app/backend/api/users.db
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8282/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: Add PostgreSQL for production
+  # postgres:
+  #   image: postgres:15-alpine
+  #   environment:
+  #     POSTGRES_DB: kubee_web
+  #     POSTGRES_USER: kubee_user
+  #     POSTGRES_PASSWORD: kubee_password
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+
+# volumes:
+#   postgres_data:

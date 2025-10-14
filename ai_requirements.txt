@@ -1,0 +1,27 @@
+# Kubee Web - AI 기능 전용 의존성
+# AI 및 RAG 기능에 필요한 패키지들
+
+# LangChain 생태계
+langchain>=0.1.0
+langchain-core>=0.1.0
+langchain-community>=0.0.20
+langchain-openai>=0.0.5
+
+# 벡터 데이터베이스
+faiss-cpu>=1.7.4
+
+# OpenAI API
+openai>=1.0.0
+
+
+# 텍스트 처리
+langchain-text-splitters>=0.0.1
+sentence-transformers>=2.2.2
+
+# 유틸리티
+tqdm>=4.65.0
+colorama>=0.4.6
+
+# 데이터 시각화 및 처리
+plotly>=5.17.0
+pandas>=2.0.0

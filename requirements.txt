@@ -1,0 +1,58 @@
+# Kubee Web - Kubernetes 보안 스캔 플랫폼
+# Python 의존성 패키지 목록
+
+# Flask 백엔드 API 서버
+flask>=3.0.0
+flask-cors>=4.0.0
+
+# 인증 및 보안
+bcrypt>=4.0.0
+PyJWT>=2.8.0
+python-dotenv>=1.0.0
+
+# 데이터베이스
+# sqlite3는 Python 내장 모듈이므로 별도 설치 불필요
+
+# Kubernetes 보안 스캔 서비스
+gitpython>=3.1.45
+
+# HTTP 클라이언트
+requests>=2.32.0
+
+# 유틸리티
+python-dateutil>=2.9.0
+
+# 파일 처리 및 내보내기
+openpyxl>=3.1.0  # Excel 파일 처리
+reportlab>=4.0.0  # PDF 보고서 생성
+
+# 로깅 및 모니터링
+structlog>=23.0.0  # 구조화된 로깅
+psutil>=5.9.0  # 시스템 리소스 모니터링
+
+# AI 및 RAG 기능 (선택사항 - AI 기능 사용 시에만 설치)
+langchain>=0.1.0
+langchain-core>=0.1.0
+langchain-community>=0.0.20
+langchain-openai>=0.0.5
+faiss-cpu>=1.7.4  # 벡터 데이터베이스
+openai>=1.0.0  # OpenAI API 클라이언트
+
+# 텍스트 처리 및 분할
+langchain-text-splitters>=0.0.1
+
+# 벡터 임베딩
+sentence-transformers>=2.2.2
+
+# 데이터 시각화 (AI 분석기용)
+plotly>=5.17.0
+pandas>=2.0.0
+
+# 개발 및 테스트 (선택사항)
+pytest>=7.0.0
+pytest-flask>=1.2.0
+pytest-cov>=4.0.0  # 테스트 커버리지
+
+# 추가 유틸리티
+tqdm>=4.65.0  # 진행률 표시
+colorama>=0.4.6  # 컬러 출력
