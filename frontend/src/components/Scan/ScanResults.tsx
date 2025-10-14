@@ -27,7 +27,7 @@ import {
   FileOpen as FileOpenIcon,
   Lightbulb as LightbulbIcon,
   GetApp as GetAppIcon,
-  TableChart as TableChartIcon,
+  TableView as TableChartIcon,
 } from '@mui/icons-material';
 import { scanAPI } from '../../services/api';
 import { ScanResult, Finding } from '../../types';
