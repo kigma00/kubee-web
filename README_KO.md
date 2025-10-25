@@ -50,6 +50,16 @@
 
 ---
 
+## 🎥 시연영상
+
+Kubee Web의 주요 기능과 사용법을 확인해보세요:
+
+[![Kubee Web 시연영상](https://img.youtube.com/vi/VP6hipB-tmU/0.jpg)](https://youtu.be/VP6hipB-tmU)
+
+*클릭하여 YouTube에서 시연영상 보기*
+
+---
+
 ## ✨ 주요 기능
 
 ### 🔍 **스캔 및 분석**
@@ -65,6 +75,8 @@
 - **익스플로잇 시나리오**: 발견된 취약점의 구체적인 공격 방법 설명
 - **보안 권장사항**: AI 기반 맞춤형 수정 권장사항 제공
 - **자연어 질의**: Kubernetes 보안에 대한 자유로운 질문과 답변
+- **향상된 AI 인터페이스**: 개선된 사용자 경험을 제공하는 새로운 AI 분석 컴포넌트
+- **지식베이스 통합**: 포괄적인 Kubernetes 보안 지식베이스
 
 ### 📊 **대시보드 및 통계**
 - **실시간 대시보드**: 전체 시스템 현황을 한눈에 파악
@@ -72,6 +84,8 @@
 - **심각도별 분포**: Critical, High, Medium, Low 미스컨피그레이션 분포 시각화
 - **월별 통계**: 스캔 및 미스컨피그레이션 추이 분석
 - **상세 통계**: 미스컨피그레이션 유형별 빈도 및 상세 정보
+- **고급 통계 탭**: 차트와 그래프를 포함한 포괄적인 통계 분석
+- **미스컨피그레이션 분석**: 보안 문제와 패턴에 대한 심층 분석
 
 ### 🔐 **인증 및 사용자 관리**
 - **JWT 기반 인증**: 안전한 토큰 기반 인증 시스템
@@ -89,6 +103,8 @@
 - **개인 설정**: 테마, 언어, 페이지당 항목 수 등 UI 설정
 - **스캔 설정**: 자동 스캔, Deep Scan 기본값, 동시 스캔 수 제한
 - **보안 설정**: 세션 타임아웃, 비밀번호 정책
+- **사용자 가이드**: 역할별 포괄적인 사용자 가이드 및 문서
+- **고급 설정 페이지**: 고급 사용자를 위한 상세한 구성 옵션
 
 ---
 
@@ -157,9 +173,12 @@ graph TB
 **Frontend:**
 - React 19.1.1 + TypeScript 4.9.5
 - Material-UI 7.3.2 (컴포넌트 라이브러리)
-- Axios (HTTP 클라이언트)
-- React Router (라우팅)
-- Recharts (차트 라이브러리)
+- Axios 1.12.2 (HTTP 클라이언트)
+- React Router 7.9.3 (라우팅)
+- Recharts 3.2.1 (차트 라이브러리)
+- @mui/x-data-grid 8.12.1 (고급 데이터 그리드)
+- @mui/x-date-pickers 8.12.0 (날짜 선택 컴포넌트)
+- dayjs 1.11.18 (날짜 라이브러리)
 
 **Backend:**
 - Flask 3.0.0 (웹 프레임워크)
@@ -171,6 +190,8 @@ graph TB
 - LangChain (RAG 프레임워크)
 - OpenAI GPT (언어 모델)
 - FAISS (벡터 데이터베이스)
+- sentence-transformers (텍스트 임베딩)
+- langchain-text-splitters (텍스트 처리)
 
 **DevOps:**
 - Docker + Docker Compose
@@ -375,6 +396,38 @@ Authorization: Bearer <token>
 #### 스캔 로그 조회
 ```http
 GET /api/scan-logs
+Authorization: Bearer <token>
+```
+
+### 🤖 AI API
+
+#### AI 채팅
+```http
+POST /api/ai/chat
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "message": "Kubernetes 보안에 대한 질문",
+  "scan_results": [scan_result_data],
+  "context": {}
+}
+```
+
+#### 스캔 결과 분석
+```http
+POST /api/ai/analyze-scan
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "scan_results": [scan_result_data]
+}
+```
+
+#### AI 상태 확인
+```http
+GET /api/ai/status
 Authorization: Bearer <token>
 ```
 
