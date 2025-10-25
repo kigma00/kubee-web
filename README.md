@@ -50,6 +50,16 @@
 
 ---
 
+## 🎥 시연영상
+
+Kubee Web의 주요 기능과 사용법을 확인해보세요:
+
+[![Kubee Web 시연영상](https://img.youtube.com/vi/VP6hipB-tmU/0.jpg)](https://youtu.be/VP6hipB-tmU)
+
+*클릭하여 YouTube에서 시연영상 보기*
+
+---
+
 ## ✨ Key Features
 
 ### 🔍 **Scanning & Analysis**
@@ -65,6 +75,8 @@
 - **Exploit Scenarios**: Detailed attack methods for discovered vulnerabilities
 - **Security Recommendations**: AI-based customized remediation recommendations
 - **Natural Language Queries**: Free-form questions and answers about Kubernetes security
+- **Enhanced AI Interface**: New AI analysis component with improved user experience
+- **Knowledge Base Integration**: Comprehensive Kubernetes security knowledge base
 
 ### 📊 **Dashboard & Statistics**
 - **Real-time Dashboard**: Overview of entire system status at a glance
@@ -72,6 +84,8 @@
 - **Severity Distribution**: Visualization of Critical, High, Medium, Low misconfiguration distribution
 - **Monthly Statistics**: Analysis of scan and misconfiguration trends
 - **Detailed Statistics**: Frequency and detailed information by misconfiguration type
+- **Advanced Statistics Tab**: Comprehensive statistical analysis with charts and graphs
+- **Misconfiguration Analytics**: Deep dive into security issues and patterns
 
 ### 🔐 **Authentication & User Management**
 - **JWT-based Authentication**: Secure token-based authentication system
@@ -89,6 +103,8 @@
 - **Personal Settings**: Theme, language, items per page UI settings
 - **Scan Settings**: Auto-scan, Deep Scan defaults, concurrent scan limits
 - **Security Settings**: Session timeout, password policies
+- **User Guide**: Role-based comprehensive user guide and documentation
+- **Advanced Settings Page**: Detailed configuration options for power users
 
 ---
 
@@ -157,9 +173,12 @@ graph TB
 **Frontend:**
 - React 19.1.1 + TypeScript 4.9.5
 - Material-UI 7.3.2 (Component Library)
-- Axios (HTTP Client)
-- React Router (Routing)
-- Recharts (Chart Library)
+- Axios 1.12.2 (HTTP Client)
+- React Router 7.9.3 (Routing)
+- Recharts 3.2.1 (Chart Library)
+- @mui/x-data-grid 8.12.1 (Advanced Data Grid)
+- @mui/x-date-pickers 8.12.0 (Date Picker Components)
+- dayjs 1.11.18 (Date Library)
 
 **Backend:**
 - Flask 3.0.0 (Web Framework)
@@ -171,6 +190,8 @@ graph TB
 - LangChain (RAG Framework)
 - OpenAI GPT (Language Model)
 - FAISS (Vector Database)
+- sentence-transformers (Text Embeddings)
+- langchain-text-splitters (Text Processing)
 
 **DevOps:**
 - Docker + Docker Compose
@@ -373,6 +394,38 @@ Authorization: Bearer <token>
 #### Get Scan Logs
 ```http
 GET /api/scan-logs
+Authorization: Bearer <token>
+```
+
+### 🤖 AI API
+
+#### AI Chat
+```http
+POST /api/ai/chat
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "message": "Kubernetes 보안에 대한 질문",
+  "scan_results": [scan_result_data],
+  "context": {}
+}
+```
+
+#### Analyze Scan Results
+```http
+POST /api/ai/analyze-scan
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "scan_results": [scan_result_data]
+}
+```
+
+#### Get AI Status
+```http
+GET /api/ai/status
 Authorization: Bearer <token>
 ```
 
