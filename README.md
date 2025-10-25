@@ -50,13 +50,13 @@
 
 ---
 
-## 🎥 시연영상
+## 🎥 Demo Video
 
-Kubee Web의 주요 기능과 사용법을 확인해보세요:
+Check out Kubee Web's key features and usage:
 
-[![Kubee Web 시연영상](https://img.youtube.com/vi/VP6hipB-tmU/0.jpg)](https://youtu.be/VP6hipB-tmU)
+[![Kubee Web Demo Video](https://img.youtube.com/vi/VP6hipB-tmU/0.jpg)](https://youtu.be/VP6hipB-tmU)
 
-*클릭하여 YouTube에서 시연영상 보기*
+*Click to watch the demo video on YouTube*
 
 ---
 
